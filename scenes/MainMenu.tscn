@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://11xqqf6ygv3x"]
+
+[ext_resource type="Script" uid="uid://gm2klvgflqtb" path="res://scripts/UI/main_menu.gd" id="1_yqorp"]
+
+[node name="MainMenu" type="Control" unique_id=1344240195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqorp")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1598568821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsMenu" type="Control" parent="." unique_id=549428967]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsVBoxContainer" type="VBoxContainer" parent="OptionsMenu" unique_id=765739347]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -220.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_constants/separation = 8
+
+[node name="ResolutionHBox" type="HBoxContainer" parent="OptionsMenu/OptionsVBoxContainer" unique_id=2008357688]
+layout_mode = 2
+
+[node name="ResolutionLabel" type="Label" parent="OptionsMenu/OptionsVBoxContainer/ResolutionHBox" unique_id=690493021]
+layout_mode = 2
+text = "RESOLUTION"
+
+[node name="ResolutionButton" type="OptionButton" parent="OptionsMenu/OptionsVBoxContainer/ResolutionHBox" unique_id=1848621582]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+selected = 0
+item_count = 7
+popup/item_0/text = "640x360"
+popup/item_0/id = 0
+popup/item_1/text = "768x432"
+popup/item_1/id = 1
+popup/item_2/text = "896x504"
+popup/item_2/id = 2
+popup/item_3/text = "1024x576"
+popup/item_3/id = 3
+popup/item_4/text = "1152x648"
+popup/item_4/id = 4
+popup/item_5/text = "1280x720"
+popup/item_5/id = 5
+popup/item_6/text = "1920x1080"
+popup/item_6/id = 6
+
+[node name="ScreenHBox" type="HBoxContainer" parent="OptionsMenu/OptionsVBoxContainer" unique_id=903306843]
+layout_mode = 2
+
+[node name="ScreenLabel" type="Label" parent="OptionsMenu/OptionsVBoxContainer/ScreenHBox" unique_id=18683485]
+layout_mode = 2
+text = "SCREEN"
+
+[node name="OptionButton" type="OptionButton" parent="OptionsMenu/OptionsVBoxContainer/ScreenHBox" unique_id=1874690165]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+selected = 0
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+
+[node name="MainVolumeHBox" type="HBoxContainer" parent="OptionsMenu/OptionsVBoxContainer" unique_id=390622311]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MasterLabel" type="Label" parent="OptionsMenu/OptionsVBoxContainer/MainVolumeHBox" unique_id=726295228]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MASTER_VOLUME"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="OptionsMenu/OptionsVBoxContainer/MainVolumeHBox" unique_id=1185307508]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+
+[node name="MasterPercentage" type="Label" parent="OptionsMenu/OptionsVBoxContainer/MainVolumeHBox" unique_id=1100792246]
+layout_mode = 2
+text = "0%"
+
+[node name="MusicVolumeHBox" type="HBoxContainer" parent="OptionsMenu/OptionsVBoxContainer" unique_id=928544719]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="OptionsMenu/OptionsVBoxContainer/MusicVolumeHBox" unique_id=286014011]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MUSIC_VOLUME"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="OptionsMenu/OptionsVBoxContainer/MusicVolumeHBox" unique_id=659594459]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+
+[node name="MusicPercentage" type="Label" parent="OptionsMenu/OptionsVBoxContainer/MusicVolumeHBox" unique_id=1402164673]
+layout_mode = 2
+text = "0%"
+
+[node name="SFXVolumeHBox" type="HBoxContainer" parent="OptionsMenu/OptionsVBoxContainer" unique_id=1763015132]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="OptionsMenu/OptionsVBoxContainer/SFXVolumeHBox" unique_id=939880347]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX_VOLUME"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="OptionsMenu/OptionsVBoxContainer/SFXVolumeHBox" unique_id=682716263]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+
+[node name="SFXPercentage" type="Label" parent="OptionsMenu/OptionsVBoxContainer/SFXVolumeHBox" unique_id=1850183687]
+layout_mode = 2
+text = "0%"
+
+[node name="BackButton" type="Button" parent="OptionsMenu/OptionsVBoxContainer" unique_id=510371306]
+layout_mode = 2
+text = "BACK"
+
+[node name="MainMarginContainer" type="MarginContainer" parent="." unique_id=954910596]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="MainContainer" type="VBoxContainer" parent="MainMarginContainer" unique_id=1430367734]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MainMarginContainer/MainContainer" unique_id=256899479]
+layout_mode = 2
+text = "START_GAME"
+
+[node name="OptionsButton" type="Button" parent="MainMarginContainer/MainContainer" unique_id=648999304]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="CreditsButton" type="Button" parent="MainMarginContainer/MainContainer" unique_id=728931500]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="QuitButton" type="Button" parent="MainMarginContainer/MainContainer" unique_id=763949913]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="item_selected" from="OptionsMenu/OptionsVBoxContainer/ResolutionHBox/ResolutionButton" to="." method="_on_resolution_button_item_selected"]
+[connection signal="item_selected" from="OptionsMenu/OptionsVBoxContainer/ScreenHBox/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="OptionsMenu/OptionsVBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainMarginContainer/MainContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMarginContainer/MainContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMarginContainer/MainContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainMarginContainer/MainContainer/QuitButton" to="." method="_on_quit_button_pressed"]
