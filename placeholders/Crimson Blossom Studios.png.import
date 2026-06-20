@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3rxcp3enwu2w"
-path="res://.godot/imported/placeholder.jpg-08400f0d35e6523e90077f3121c9a31a.ctex"
+uid="uid://c1st2n4g1po6a"
+path="res://.godot/imported/Crimson Blossom Studios.png-2c64b622a8d1dd9c98c06b40e7a59e4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholder.jpg"
-dest_files=["res://.godot/imported/placeholder.jpg-08400f0d35e6523e90077f3121c9a31a.ctex"]
+source_file="res://placeholders/Crimson Blossom Studios.png"
+dest_files=["res://.godot/imported/Crimson Blossom Studios.png-2c64b622a8d1dd9c98c06b40e7a59e4b.ctex"]
 
 [params]
 
