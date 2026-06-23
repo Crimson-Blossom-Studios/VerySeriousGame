@@ -1,6 +1,4 @@
-extends Control
-
-@onready var mesa_viewport: SubViewport = $HBoxContainer/mesaContainer/MesaViewportContainer/MesaViewport
+extends Node2D
 
 var paper_stack = []
 var paper_scene = preload("res://scenes/Paper.tscn")
@@ -11,10 +9,10 @@ func _ready() -> void:
 		add_paper(paper)
 
 func add_paper(paper) -> void:
-	mesa_viewport.add_child(paper)
+	add_child(paper)
 	paper_stack.append(paper)
-	paper.position = Vector2(mesa_viewport.size.x * 0.5 + randf_range(-60, 60), mesa_viewport.size.y * 0.5 + randf_range(-40, 40))
-
+	var viewport_size = get_viewport_rect().size
+	paper.position = Vector2(viewport_size.x * 0.5 + randf_range(-60, 60), viewport_size.y * 0.5 + randf_range(-40, 40))
 	var count = 0
 	for p in paper_stack:
 		p.z_index = count

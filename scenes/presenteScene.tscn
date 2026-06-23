@@ -6,61 +6,38 @@
 [ext_resource type="Script" uid="uid://ohe1ji8ig1va" path="res://scripts/work_button.gd" id="3_8uu3j"]
 [ext_resource type="Script" uid="uid://dmwqachhioaxc" path="res://scripts/work_bar.gd" id="4_ek3qx"]
 
-[node name="Ui" type="Control" unique_id=1680845870]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Ui" type="Node2D" unique_id=969965149]
 script = ExtResource("1_8uu3j")
 
-[node name="placeholderFundo" type="TextureRect" parent="." unique_id=1329111930]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+[node name="CanvaLayer" type="CanvasLayer" parent="." unique_id=1609696196]
+
+[node name="placeholderFundo" type="TextureRect" parent="CanvaLayer" unique_id=1329111930]
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_lol7m")
 expand_mode = 2
 stretch_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1731286203]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/separation = 0
-
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=827345047]
+[node name="PanelContainer" type="PanelContainer" parent="CanvaLayer" unique_id=827345047]
 custom_minimum_size = Vector2(220, 0)
-layout_mode = 2
+offset_right = 220.0
 size_flags_horizontal = 0
 mouse_filter = 2
 
-[node name="mesaContainer" type="CenterContainer" parent="HBoxContainer" unique_id=533897768]
+[node name="mesaContainer" type="PanelContainer" parent="CanvaLayer" unique_id=1264814872]
 clip_contents = true
-layout_mode = 2
+offset_left = 220.0
+offset_right = 220.0
 size_flags_horizontal = 3
-mouse_filter = 2
+mouse_filter = 1
 
-[node name="placeholder" type="TextureRect" parent="HBoxContainer/mesaContainer" unique_id=190816792]
+[node name="placeholder" type="TextureRect" parent="CanvaLayer/mesaContainer" unique_id=190816792]
 layout_mode = 2
 texture = ExtResource("2_edsw2")
-expand_mode = 2
-stretch_mode = 3
+expand_mode = 1
 
-[node name="workButton" type="CheckButton" parent="HBoxContainer/mesaContainer/placeholder" unique_id=1011908443]
+[node name="workButton" type="CheckButton" parent="CanvaLayer/mesaContainer/placeholder" unique_id=1011908443]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,21 +53,23 @@ grow_vertical = 2
 icon_alignment = 1
 script = ExtResource("3_8uu3j")
 
-[node name="MesaViewportContainer" type="SubViewportContainer" parent="HBoxContainer/mesaContainer" unique_id=1990769750]
+[node name="MesaViewportContainer" type="SubViewportContainer" parent="CanvaLayer/mesaContainer" unique_id=1990769750]
 layout_mode = 2
+stretch = true
 
-[node name="MesaViewport" type="SubViewport" parent="HBoxContainer/mesaContainer/MesaViewportContainer" unique_id=2009803526]
-size = Vector2i(420, 360)
+[node name="MesaViewport" type="SubViewport" parent="CanvaLayer/mesaContainer/MesaViewportContainer" unique_id=2009803526]
+handle_input_locally = false
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
-[node name="workBar" type="ProgressBar" parent="." unique_id=51263562]
-layout_mode = 1
+[node name="workBar" type="ProgressBar" parent="CanvaLayer" unique_id=51263562]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -192.0
+offset_left = -832.0
+offset_right = -640.0
 offset_bottom = 27.0
 grow_horizontal = 0
 script = ExtResource("4_ek3qx")
 
-[connection signal="toggled" from="HBoxContainer/mesaContainer/placeholder/workButton" to="HBoxContainer/mesaContainer/placeholder/workButton" method="_on_toggled"]
+[connection signal="toggled" from="CanvaLayer/mesaContainer/placeholder/workButton" to="CanvaLayer/mesaContainer/placeholder/workButton" method="_on_toggled"]

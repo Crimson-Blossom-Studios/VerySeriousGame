@@ -25,6 +25,7 @@ var mouse_in := false
 
 func _on_mouse_entered():
 	mouse_in = true
+	print("True")
 
 func _on_mouse_exited():
 	mouse_in = false
