@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dgihma5mqyq4h"]
 
+[ext_resource type="Script" uid="uid://b7mcltnhfy3ko" path="res://scripts/presente_scene.gd" id="1_8uu3j"]
 [ext_resource type="Texture2D" uid="uid://bu4mpjww7uacr" path="res://placeholders/icon.svg" id="1_lol7m"]
 [ext_resource type="Texture2D" uid="uid://c1st2n4g1po6a" path="res://placeholders/Crimson Blossom Studios.png" id="2_edsw2"]
 [ext_resource type="Script" uid="uid://ohe1ji8ig1va" path="res://scripts/work_button.gd" id="3_8uu3j"]
 [ext_resource type="Script" uid="uid://dmwqachhioaxc" path="res://scripts/work_bar.gd" id="4_ek3qx"]
-[ext_resource type="PackedScene" uid="uid://cr4ib8oak86u2" path="res://scenes/Paper.tscn" id="5_8uu3j"]
 
 [node name="Ui" type="Control" unique_id=1680845870]
 layout_mode = 3
@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8uu3j")
 
 [node name="placeholderFundo" type="TextureRect" parent="." unique_id=1329111930]
 layout_mode = 1
@@ -75,6 +76,13 @@ grow_vertical = 2
 icon_alignment = 1
 script = ExtResource("3_8uu3j")
 
+[node name="MesaViewportContainer" type="SubViewportContainer" parent="HBoxContainer/mesaContainer" unique_id=1990769750]
+layout_mode = 2
+
+[node name="MesaViewport" type="SubViewport" parent="HBoxContainer/mesaContainer/MesaViewportContainer" unique_id=2009803526]
+size = Vector2i(420, 360)
+render_target_update_mode = 4
+
 [node name="workBar" type="ProgressBar" parent="." unique_id=51263562]
 layout_mode = 1
 anchors_preset = 1
@@ -84,8 +92,5 @@ offset_left = -192.0
 offset_bottom = 27.0
 grow_horizontal = 0
 script = ExtResource("4_ek3qx")
-
-[node name="documento" parent="." unique_id=1571089226 instance=ExtResource("5_8uu3j")]
-disable_mode = 2
 
 [connection signal="toggled" from="HBoxContainer/mesaContainer/placeholder/workButton" to="HBoxContainer/mesaContainer/placeholder/workButton" method="_on_toggled"]

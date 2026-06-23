@@ -2,6 +2,7 @@ extends ProgressBar
 
 @onready var workButton = $"../HBoxContainer/mesaContainer/placeholder/workButton"
 
+
 @export var max_work: float = 100.0
 @export var depletion_rate: float = 5.0
 @export var gain_per_key: float = 1.0
