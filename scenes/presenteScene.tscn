@@ -4,33 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://c1st2n4g1po6a" path="res://placeholders/Crimson Blossom Studios.png" id="2_edsw2"]
 [ext_resource type="Script" uid="uid://ohe1ji8ig1va" path="res://scripts/work_button.gd" id="3_8uu3j"]
 [ext_resource type="Script" uid="uid://dmwqachhioaxc" path="res://scripts/work_bar.gd" id="4_ek3qx"]
+[ext_resource type="PackedScene" uid="uid://cr4ib8oak86u2" path="res://scenes/Paper.tscn" id="5_8uu3j"]
 
-[sub_resource type="GDScript" id="GDScript_rr6jd"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_button() -> void:
-	pass # Replace with function body.
-"
-
-[node name="Ui" type="Control" unique_id=535942253]
-clip_contents = true
+[node name="Ui" type="Control" unique_id=1680845870]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_rr6jd")
 
 [node name="placeholderFundo" type="TextureRect" parent="." unique_id=1329111930]
 layout_mode = 1
@@ -56,17 +38,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=827345047]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 2
 
 [node name="mesaContainer" type="CenterContainer" parent="HBoxContainer" unique_id=533897768]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="placeholder" type="TextureRect" parent="HBoxContainer/mesaContainer" unique_id=190816792]
 layout_mode = 2
@@ -95,9 +80,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -342.0
+offset_left = -192.0
 offset_bottom = 27.0
 grow_horizontal = 0
 script = ExtResource("4_ek3qx")
+
+[node name="documento" parent="." unique_id=1571089226 instance=ExtResource("5_8uu3j")]
+disable_mode = 2
 
 [connection signal="toggled" from="HBoxContainer/mesaContainer/placeholder/workButton" to="HBoxContainer/mesaContainer/placeholder/workButton" method="_on_toggled"]
