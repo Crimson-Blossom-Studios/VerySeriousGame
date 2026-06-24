@@ -42,7 +42,6 @@ func customize(titulo: String, corpo: String, confirmarText: String = "Sim", can
 	cancelarButton.text = cancelarText
 	return self
 
-		
 func close(isConfirmed: bool = false) -> void:
 	if isConfirmed:
 		confirm()

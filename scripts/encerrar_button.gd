@@ -11,8 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_pressed() -> void:
-	var modal = preload("res://scenes/encerrarCasoModal.tscn").instantiate()
-	get_tree().current_scene.add_child(modal)
-	var confirmed = await modal.prompt()
+	var confirmed = await conf.prompt()
 	if confirmed:
 		get_tree().change_scene_to_file("res://scenes/Paper.tscn")

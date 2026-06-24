@@ -110,7 +110,7 @@ offset_bottom = 27.0
 grow_horizontal = 0
 script = ExtResource("4_ek3qx")
 
-[node name="EncerrarCasoModal" parent="." unique_id=248465526 instance=ExtResource("10_mkrnt")]
+[node name="EncerrarCasoModal" parent="CanvaLayer" unique_id=248465526 instance=ExtResource("10_mkrnt")]
 unique_name_in_owner = true
 
 [connection signal="pressed" from="CanvaLayer/PanelContainer/tempoContainer/voltarButton" to="CanvaLayer/PanelContainer/tempoContainer/voltarButton" method="_on_pressed"]
