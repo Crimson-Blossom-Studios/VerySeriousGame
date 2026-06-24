@@ -1,6 +1,6 @@
 extends ProgressBar
 
-@onready var workButton = $"../HBoxContainer/mesaContainer/placeholder/workButton"
+@onready var workButton = %workButton
 
 @export var max_work: float = 100.0
 @export var depletion_rate: float = 5.0
@@ -14,9 +14,7 @@ func _ready() -> void:
 	max_value = max_work
 	work = max_work
 	update_bar()
-	
 	workButton.activateWork.connect(toggle)
-	
 	focus_mode = Control.FOCUS_ALL
 
 func _input(event: InputEvent) -> void:
@@ -43,7 +41,7 @@ func remove_work(amount: float) -> void:
 
 func update_bar() -> void:
 	value = work
-	
+
 func toggle(start: bool) -> void:
 	if start:
 		active = true

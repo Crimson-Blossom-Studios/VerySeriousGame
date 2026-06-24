@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://sx78myhskura"]
+
+[ext_resource type="PackedScene" uid="uid://cr4ib8oak86u2" path="res://scenes/Paper.tscn" id="1_ibkli"]
+
+[node name="Game" type="Node2D" unique_id=1331701435]
+
+[node name="documento" parent="." unique_id=1571089226 instance=ExtResource("1_ibkli")]
+
+[node name="documento2" parent="." unique_id=1321131124 instance=ExtResource("1_ibkli")]
