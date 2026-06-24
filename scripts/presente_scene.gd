@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var conf: EncerrarModal = $CanvaLayer/EncerrarCasoModal
-
 var paper_stack = []
 var paper_scene = preload("res://scenes/Paper.tscn")
 
@@ -10,12 +8,6 @@ func _ready() -> void:
 	for i in range(2):
 		var paper = paper_scene.instantiate()
 		add_paper(paper)
-		
-func _unhandled_key_input(event: InputEvent) -> void:	
-	var isConfirmed = await conf.prompt(true)
-	
-	if isConfirmed:
-		get_tree().change_scene_to_file("res://scenes/Paper.tscn")
 
 func add_paper(paper) -> void:
 	$CanvaLayer.add_child(paper)

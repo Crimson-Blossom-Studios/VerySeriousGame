@@ -13,12 +13,12 @@ var isOpen: bool = false
 var _should_unpause: bool = false
 
 func _ready() -> void:
-		set_process_unhandled_key_input(false)
-		if confirmarButton:
-			confirmarButton.pressed.connect(_on_confirmarButton_pressed)
-		if cancelarButton:
-			cancelarButton.pressed.connect(_on_cancelarButton_pressed)
-		hide()
+	set_process_unhandled_key_input(false)
+	if confirmarButton:
+		confirmarButton.pressed.connect(_on_confirmarButton_pressed)
+	if cancelarButton:
+		cancelarButton.pressed.connect(_on_cancelarButton_pressed)
+	hide()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):

@@ -1,5 +1,7 @@
 extends Button
 
+@onready var conf: EncerrarModal = %EncerrarCasoModal
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -8,6 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	var modal = preload("res://scenes/encerrarCasoModal.tscn").instantiate()
+	get_tree().current_scene.add_child(modal)
+	var confirmed = await modal.prompt()
+	if confirmed:
+		get_tree().change_scene_to_file("res://scenes/Paper.tscn")
