@@ -4,6 +4,5 @@ extends Resource
 
 @export var texture: Texture2D
 @export var collision_radius: float = 82.0
-
-# Campos opcionais para lógica de jogo
 @export var document_name: String = ""
+@export var document_text: String = "" # Rich text Label

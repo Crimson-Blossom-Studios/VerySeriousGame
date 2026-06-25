@@ -1,4 +1,3 @@
-# res://scripts/documento_viewer.gd
 extends CanvasLayer
 
 func _ready() -> void:

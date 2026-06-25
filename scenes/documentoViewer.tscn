@@ -23,6 +23,11 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 2
 
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=838046364]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Button" type="Button" parent="ColorRect" unique_id=1962841892]
 layout_mode = 0
 offset_right = 8.0

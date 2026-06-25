@@ -14,6 +14,8 @@ var mouse_in := false
 signal document_opened(documento: Documento)
 
 func _ready() -> void:
+	print("documento _ready chamado, position: ", global_position)
+	print("visivel: ", visible)
 	if data:
 		$Sprite.texture = data.texture
 		var shape = CircleShape2D.new()
