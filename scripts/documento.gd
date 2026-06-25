@@ -13,6 +13,8 @@ var bounds := Rect2()
 @export var data: DocumentData
 
 signal document_opened(documento: Documento)
+signal document_hovered(nome: String)
+signal document_unhovered()
 
 func _ready() -> void:
 	print("documento _ready chamado, position: ", global_position)
@@ -22,15 +24,6 @@ func _ready() -> void:
 		var shape = CircleShape2D.new()
 		shape.radius = data.collision_radius
 		$CollisionShape2D.shape = shape
-		
-		$NameLabel.text = data.document_name
-		var tex = data.texture
-		var half_w = tex.get_width() / 2.0
-		var half_h = tex.get_height() / 2.0
-		
-		$NameLabel.custom_minimum_size.x = tex.get_width()
-		$NameLabel.position = Vector2(-half_w, half_h + 8)
-		$NameLabel.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -55,10 +48,14 @@ func _process(_delta):
 		if bounds != Rect2():
 			target.x = clamp(target.x, bounds.position.x, bounds.end.x)
 			target.y = clamp(target.y, bounds.position.y, bounds.end.y)
-		global_position = get_global_mouse_position() + drag_offset
+		global_position = target
+	$Sprite.flip_v = global_position.x > 210
 
 func _on_mouse_entered():
 	mouse_in = true
+	emit_signal("document_hovered", data.document_name if data else "")
+
 
 func _on_mouse_exited():
 	mouse_in = false
+	emit_signal("document_unhovered")

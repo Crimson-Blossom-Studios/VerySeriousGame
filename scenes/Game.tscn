@@ -238,6 +238,7 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 
 [node name="Label" type="Label" parent="RightPanel/ViewportContainer/RightPanelViewport/UI/HBoxContainer/MarginContainer" unique_id=1677389292]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
