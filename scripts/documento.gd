@@ -8,6 +8,7 @@ static var dragging_instance = null
 var dragging := false
 var drag_offset := Vector2.ZERO
 var mouse_in := false
+var bounds := Rect2()
 
 @export var data: DocumentData
 
@@ -50,6 +51,10 @@ func _input(event):
 
 func _process(_delta):
 	if dragging:
+		var target = get_global_mouse_position() + drag_offset
+		if bounds != Rect2():
+			target.x = clamp(target.x, bounds.position.x, bounds.end.x)
+			target.y = clamp(target.y, bounds.position.y, bounds.end.y)
 		global_position = get_global_mouse_position() + drag_offset
 
 func _on_mouse_entered():
