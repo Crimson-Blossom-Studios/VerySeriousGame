@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5jl5ffph4nry"]
 
 [ext_resource type="Script" uid="uid://cjet16ux3ibul" path="res://scripts/documento_viewer.gd" id="1_eu3ob"]
+[ext_resource type="Texture2D" uid="uid://dxjn5db8lmp1g" path="res://assets/UI/Arrow_Unpressed.png" id="2_72s7y"]
 
 [node name="DocumentoViewer" type="CanvasLayer" unique_id=1637418530]
 script = ExtResource("1_eu3ob")
@@ -26,3 +27,6 @@ expand_mode = 2
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+icon = ExtResource("2_72s7y")
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

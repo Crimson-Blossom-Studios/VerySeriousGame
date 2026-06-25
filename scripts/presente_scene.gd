@@ -4,7 +4,7 @@ var paper_stack = []
 var paper_scene = preload("res://scenes/documento.tscn")
 var doc_teste = preload("res://resources/doc_teste.tres")
 
-@onready var viewer = $documentoViewer
+@onready var viewer = $DocumentoViewer
 
 func _ready() -> void:
 	$CanvaLayer/placeholderFundo.z_index = -1
