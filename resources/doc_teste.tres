@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://d0fym0fkea626"]
+
+[ext_resource type="Script" uid="uid://bpnyk7k4wkf7j" path="res://resources/document_data.gd" id="1_jh2rc"]
+[ext_resource type="Texture2D" uid="uid://bu4mpjww7uacr" path="res://placeholders/icon.svg" id="2_tlpm2"]
+
+[resource]
+script = ExtResource("1_jh2rc")
+texture = ExtResource("2_tlpm2")
+document_name = "teste"
+metadata/_custom_type_script = "uid://bpnyk7k4wkf7j"
