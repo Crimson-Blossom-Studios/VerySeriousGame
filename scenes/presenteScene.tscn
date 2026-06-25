@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dgihma5mqyq4h"]
+[gd_scene format=3 uid="uid://dncaf8ahous36"]
 
 [ext_resource type="Script" uid="uid://b7mcltnhfy3ko" path="res://scripts/presente_scene.gd" id="1_8uu3j"]
 [ext_resource type="Texture2D" uid="uid://bu4mpjww7uacr" path="res://placeholders/icon.svg" id="1_lol7m"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c2b2umx23kqag" path="res://scripts/avancar_button.gd" id="4_xlljo"]
 [ext_resource type="Script" uid="uid://btyf3k0qmag8u" path="res://scripts/encerrar_button.gd" id="8_mkrnt"]
 [ext_resource type="PackedScene" uid="uid://c2tey2si1fd4b" path="res://scenes/SolveCaseModal.tscn" id="10_mkrnt"]
+[ext_resource type="PackedScene" uid="uid://c5jl5ffph4nry" path="res://scenes/documentoViewer.tscn" id="10_qmdqu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8l3jt"]
 load_path = "res://.godot/imported/seta_placeholder.png-542d7ce065f8ba3275c6f212785a7697.ctex"
@@ -115,6 +116,8 @@ script = ExtResource("4_ek3qx")
 [node name="EncerrarCasoModal" parent="CanvaLayer" unique_id=248465526 instance=ExtResource("10_mkrnt")]
 unique_name_in_owner = true
 visible = false
+
+[node name="DocumentoViewer" parent="." unique_id=1637418530 instance=ExtResource("10_qmdqu")]
 
 [connection signal="pressed" from="CanvaLayer/PanelContainer/tempoContainer/voltarButton" to="CanvaLayer/PanelContainer/tempoContainer/voltarButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvaLayer/PanelContainer/tempoContainer/avancarButton" to="CanvaLayer/PanelContainer/tempoContainer/avancarButton" method="_on_pressed"]

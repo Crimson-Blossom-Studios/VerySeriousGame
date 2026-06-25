@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bb1hh734x4hvp" path="res://scenes/presentScene.tscn" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://bbdirq0atydug" path="res://scripts/game.gd" id="1_qbsmt"]
+[ext_resource type="Script" uid="uid://cet0kyywmtlyu" path="res://scripts/present_scene.gd" id="2_2rd6h"]
 [ext_resource type="Texture2D" uid="uid://dxjn5db8lmp1g" path="res://assets/UI/Arrow_Unpressed.png" id="2_kiw3p"]
 [ext_resource type="Texture2D" uid="uid://kdokpcj85122" path="res://assets/characters/cassandra_presente_alta_resolucao.png" id="3_3xj3m"]
 [ext_resource type="PackedScene" uid="uid://c3a3wa70mthf4" path="res://scenes/pastScene.tscn" id="3_78awf"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://brecl04o6otkc" path="res://assets/UI/Arrow_Hover.png" id="4_g4kob"]
 [ext_resource type="PackedScene" uid="uid://db88jtyobjcix" path="res://scenes/futureScene.tscn" id="4_s0nni"]
 [ext_resource type="Texture2D" uid="uid://dkbp42dcmf1bl" path="res://assets/UI/ChairAnimation-Sheet.png" id="5_400sg"]
+[ext_resource type="PackedScene" uid="uid://c5jl5ffph4nry" path="res://scenes/documentoViewer.tscn" id="7_mcffj"]
 [ext_resource type="PackedScene" uid="uid://c2tey2si1fd4b" path="res://scenes/SolveCaseModal.tscn" id="8_3xj3m"]
 [ext_resource type="Script" uid="uid://dmwqachhioaxc" path="res://scripts/work_bar.gd" id="9_g4kob"]
 
@@ -251,6 +253,9 @@ visible = false
 visible = false
 
 [node name="PresentScene" parent="RightPanel/ViewportContainer/RightPanelViewport" unique_id=322256064 instance=ExtResource("1_ibkli")]
+script = ExtResource("2_2rd6h")
+
+[node name="DocumentoViewer" parent="RightPanel" unique_id=1637418530 instance=ExtResource("7_mcffj")]
 
 [connection signal="pressed" from="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SolveCaseButton" to="." method="_on_solve_case_button_pressed"]
 [connection signal="pressed" from="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2/tempoContainer/TimeBackButton" to="." method="_on_time_back_button_pressed"]
