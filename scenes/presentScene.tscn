@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bb1hh734x4hvp"]
+
+[ext_resource type="Texture2D" uid="uid://t6srs1illx51" path="res://assets/present/Desk_Scene_Present.png" id="1_mrthh"]
+[ext_resource type="Texture2D" uid="uid://b2i2b2u31gb2p" path="res://assets/present/Monitor.png" id="2_803cr"]
+[ext_resource type="Texture2D" uid="uid://cictlpy7guxl5" path="res://assets/present/Keyboard.png" id="2_gvac6"]
+[ext_resource type="Texture2D" uid="uid://c7y5ky3305cxt" path="res://assets/present/Mouse.png" id="4_82uup"]
+[ext_resource type="Texture2D" uid="uid://b20l51ve7jjej" path="res://assets/present/Mousepad.png" id="4_hik4v"]
+[ext_resource type="Script" uid="uid://brnbj00recmlk" path="res://scripts/computer.gd" id="4_pvwh3"]
+[ext_resource type="Texture2D" uid="uid://p0j56mke7k0w" path="res://assets/present/Printer.png" id="5_82uup"]
+[ext_resource type="Texture2D" uid="uid://dyswkjl356ylv" path="res://assets/present/PenHolder.png" id="7_pvwh3"]
+[ext_resource type="Texture2D" uid="uid://drst5ttkvg3f7" path="res://assets/present/Pen.png" id="8_rhios"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax5gu"]
+size = Vector2(88, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gq16"]
+size = Vector2(92, 66)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3s17"]
+radius = 9.0
+height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3s17"]
+size = Vector2(50, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwo1f"]
+size = Vector2(15, 19)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tpybk"]
+b = Vector2(8, 15)
+
+[node name="PresentScene" type="Node2D" unique_id=322256064]
+
+[node name="Mesa" type="Sprite2D" parent="." unique_id=217718441]
+position = Vector2(210, 180)
+texture = ExtResource("1_mrthh")
+
+[node name="Keyboard" type="Sprite2D" parent="." unique_id=1992887679]
+position = Vector2(194, 227)
+texture = ExtResource("2_gvac6")
+offset = Vector2(-1, -18)
+
+[node name="Area2D" type="Area2D" parent="Keyboard" unique_id=1822395762]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keyboard/Area2D" unique_id=1644035883]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_ax5gu")
+
+[node name="Computador" type="Sprite2D" parent="." unique_id=1372265967]
+position = Vector2(210, 168)
+texture = ExtResource("2_803cr")
+
+[node name="Area2D" type="Area2D" parent="Computador" unique_id=720565080]
+script = ExtResource("4_pvwh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computador/Area2D" unique_id=186585734]
+shape = SubResource("RectangleShape2D_8gq16")
+
+[node name="Mousepad" type="Sprite2D" parent="." unique_id=933958732]
+position = Vector2(266, 232)
+texture = ExtResource("4_hik4v")
+
+[node name="Mouse" type="Sprite2D" parent="." unique_id=982579995]
+position = Vector2(266, 230)
+texture = ExtResource("4_82uup")
+offset = Vector2(-11, -18)
+
+[node name="Area2D" type="Area2D" parent="Mouse" unique_id=138752869]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse/Area2D" unique_id=472696842]
+shape = SubResource("CapsuleShape2D_x3s17")
+
+[node name="Printer" type="Sprite2D" parent="." unique_id=1934170869]
+position = Vector2(332, 185)
+texture = ExtResource("5_82uup")
+
+[node name="Area2D" type="Area2D" parent="Printer" unique_id=172559912]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Printer/Area2D" unique_id=2137095846]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_x3s17")
+
+[node name="PenHolder" type="Sprite2D" parent="." unique_id=1517423994]
+position = Vector2(141, 184)
+texture = ExtResource("7_pvwh3")
+
+[node name="Area2D" type="Area2D" parent="PenHolder" unique_id=1673313091]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PenHolder/Area2D" unique_id=529683205]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_uwo1f")
+
+[node name="Pen" type="Sprite2D" parent="." unique_id=62487728]
+position = Vector2(128, 197)
+texture = ExtResource("8_rhios")
+
+[node name="Area2D" type="Area2D" parent="Pen" unique_id=99410692]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pen/Area2D" unique_id=1638119520]
+position = Vector2(-4, -8)
+shape = SubResource("SegmentShape2D_tpybk")
+
+[connection signal="input_event" from="Computador/Area2D" to="Computador/Area2D" method="_on_input_event"]

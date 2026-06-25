@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4gf14swsudkq" path="res://scripts/encerrar_caso_modal.gd" id="1_w2t7t"]
 
-[node name="EncerrarCasoModal" type="Control" unique_id=248465526]
+[node name="SolveCaseModal" type="Control" unique_id=248465526]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -47,18 +47,16 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="titulo" type="Label" parent="Modal/MarginContainer/VBoxContainer" unique_id=1172348455]
-unique_name_in_owner = true
+[node name="title" type="Label" parent="Modal/MarginContainer/VBoxContainer" unique_id=1172348455]
 layout_mode = 2
-text = "Você quer encerrar o caso?"
+text = "Would you like to solve the case?"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="descricao" type="Label" parent="Modal/MarginContainer/VBoxContainer" unique_id=1901686217]
-unique_name_in_owner = true
+[node name="description" type="Label" parent="Modal/MarginContainer/VBoxContainer" unique_id=1901686217]
 layout_mode = 2
-text = "Isso te levara a tela de chute"
+text = "This button will take you to the guess screen."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -67,16 +65,16 @@ layout_mode = 2
 size_flags_vertical = 8
 alignment = 1
 
-[node name="confirmarButton" type="Button" parent="Modal/MarginContainer/VBoxContainer/HBoxContainer" unique_id=498715075]
-unique_name_in_owner = true
+[node name="confirmButton" type="Button" parent="Modal/MarginContainer/VBoxContainer/HBoxContainer" unique_id=498715075]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Confirmar"
+text = "Confirm
+"
 
-[node name="cancelarButton" type="Button" parent="Modal/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1479867980]
-unique_name_in_owner = true
+[node name="cancelButton" type="Button" parent="Modal/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1479867980]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Cancelar"
+text = "Cancel
+"

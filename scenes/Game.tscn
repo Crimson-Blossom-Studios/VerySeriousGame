@@ -1,9 +1,257 @@
 [gd_scene format=3 uid="uid://sx78myhskura"]
 
-[ext_resource type="PackedScene" uid="uid://cr4ib8oak86u2" path="res://scenes/Paper.tscn" id="1_ibkli"]
+[ext_resource type="PackedScene" uid="uid://bb1hh734x4hvp" path="res://scenes/presentScene.tscn" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://bbdirq0atydug" path="res://scripts/game.gd" id="1_qbsmt"]
+[ext_resource type="Texture2D" uid="uid://dxjn5db8lmp1g" path="res://assets/UI/Arrow_Unpressed.png" id="2_kiw3p"]
+[ext_resource type="Texture2D" uid="uid://kdokpcj85122" path="res://assets/characters/cassandra_presente_alta_resolucao.png" id="3_3xj3m"]
+[ext_resource type="PackedScene" uid="uid://c3a3wa70mthf4" path="res://scenes/pastScene.tscn" id="3_78awf"]
+[ext_resource type="Texture2D" uid="uid://cwsik44spd3sq" path="res://assets/UI/Arrow_Pressed.png" id="3_400sg"]
+[ext_resource type="Texture2D" uid="uid://brecl04o6otkc" path="res://assets/UI/Arrow_Hover.png" id="4_g4kob"]
+[ext_resource type="PackedScene" uid="uid://db88jtyobjcix" path="res://scenes/futureScene.tscn" id="4_s0nni"]
+[ext_resource type="Texture2D" uid="uid://dkbp42dcmf1bl" path="res://assets/UI/ChairAnimation-Sheet.png" id="5_400sg"]
+[ext_resource type="PackedScene" uid="uid://c2tey2si1fd4b" path="res://scenes/SolveCaseModal.tscn" id="8_3xj3m"]
+[ext_resource type="Script" uid="uid://dmwqachhioaxc" path="res://scripts/work_bar.gd" id="9_g4kob"]
 
-[node name="Game" type="Node2D" unique_id=1331701435]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntijw"]
+bg_color = Color(0.105882354, 0.1254902, 0.14901961, 1)
 
-[node name="documento" parent="." unique_id=1571089226 instance=ExtResource("1_ibkli")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax5gu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_right = 1
+border_color = Color(1, 1, 1, 1)
 
-[node name="documento2" parent="." unique_id=1321131124 instance=ExtResource("1_ibkli")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ax5gu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwo1f"]
+bg_color = Color(0.14117648, 0.18039216, 0.20784314, 1)
+border_width_top = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4kob"]
+atlas = ExtResource("5_400sg")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy1jj"]
+atlas = ExtResource("5_400sg")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xj3m"]
+atlas = ExtResource("5_400sg")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcffj"]
+atlas = ExtResource("5_400sg")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rd6h"]
+atlas = ExtResource("5_400sg")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ua8r"]
+atlas = ExtResource("5_400sg")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8gq16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4kob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy1jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xj3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcffj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rd6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ua8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4kob")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3s17"]
+
+[node name="GameScreen" type="HBoxContainer" unique_id=697691704]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_qbsmt")
+
+[node name="LeftPanel" type="Panel" parent="." unique_id=1502211528]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ntijw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPanel" unique_id=392678436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="LeftPanel/VBoxContainer" unique_id=1832167846]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ax5gu")
+
+[node name="teste2" type="VBoxContainer" parent="LeftPanel/VBoxContainer/PanelContainer2" unique_id=1755465845]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2" unique_id=851498059]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ax5gu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer" unique_id=1326030605]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer" unique_id=212968320]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_3xj3m")
+expand_mode = 4
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer" unique_id=1886189660]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Cassandra Reyes - Detective"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer" unique_id=1986633881]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer/MarginContainer" unique_id=1002433750]
+layout_mode = 2
+
+[node name="SolveCaseButton" type="Button" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=231223217]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 12
+text = "Solve the Case"
+
+[node name="Button2" type="Button" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1414243441]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 12
+text = "Notes"
+
+[node name="PanelContainer2" type="PanelContainer" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2" unique_id=410916778]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_uwo1f")
+
+[node name="tempoContainer" type="HBoxContainer" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2" unique_id=1175408077]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="TimeBackButton" type="TextureButton" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2/tempoContainer" unique_id=3710974]
+layout_mode = 2
+texture_normal = ExtResource("2_kiw3p")
+texture_pressed = ExtResource("3_400sg")
+texture_hover = ExtResource("4_g4kob")
+texture_disabled = ExtResource("3_400sg")
+
+[node name="Control" type="Control" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2/tempoContainer" unique_id=177222221]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2/tempoContainer/Control" unique_id=1906047558]
+sprite_frames = SubResource("SpriteFrames_8gq16")
+offset = Vector2(25, 25)
+
+[node name="TimeForwardButton" type="TextureButton" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2/tempoContainer" unique_id=422486497]
+layout_mode = 2
+texture_normal = ExtResource("2_kiw3p")
+texture_pressed = ExtResource("3_400sg")
+texture_hover = ExtResource("4_g4kob")
+texture_disabled = ExtResource("3_400sg")
+flip_h = true
+
+[node name="RightPanel" type="PanelContainer" parent="." unique_id=1267568031]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x3s17")
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="RightPanel" unique_id=1831337243]
+z_index = 1
+layout_mode = 2
+stretch = true
+
+[node name="RightPanelViewport" type="SubViewport" parent="RightPanel/ViewportContainer" unique_id=1518667638]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+physics_object_picking = true
+size = Vector2i(420, 360)
+render_target_update_mode = 4
+
+[node name="UI" type="CanvasLayer" parent="RightPanel/ViewportContainer/RightPanelViewport" unique_id=28828841]
+
+[node name="workBar" type="ProgressBar" parent="RightPanel/ViewportContainer/RightPanelViewport/UI" unique_id=549035567]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_bottom = 27.0
+grow_horizontal = 0
+script = ExtResource("9_g4kob")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RightPanel/ViewportContainer/RightPanelViewport/UI" unique_id=1901497828]
+custom_minimum_size = Vector2(420, 0)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/ViewportContainer/RightPanelViewport/UI/HBoxContainer" unique_id=96684399]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="Label" type="Label" parent="RightPanel/ViewportContainer/RightPanelViewport/UI/HBoxContainer/MarginContainer" unique_id=1677389292]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Double-click any document to inspect"
+
+[node name="SolveCaseModal" parent="RightPanel/ViewportContainer/RightPanelViewport/UI" unique_id=248465526 instance=ExtResource("8_3xj3m")]
+
+[node name="PastScene" parent="RightPanel/ViewportContainer/RightPanelViewport" unique_id=2045168837 instance=ExtResource("3_78awf")]
+visible = false
+
+[node name="FutureScene" parent="RightPanel/ViewportContainer/RightPanelViewport" unique_id=22923935 instance=ExtResource("4_s0nni")]
+visible = false
+
+[node name="PresentScene" parent="RightPanel/ViewportContainer/RightPanelViewport" unique_id=322256064 instance=ExtResource("1_ibkli")]
+
+[connection signal="pressed" from="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SolveCaseButton" to="." method="_on_solve_case_button_pressed"]
+[connection signal="pressed" from="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2/tempoContainer/TimeBackButton" to="." method="_on_time_back_button_pressed"]
+[connection signal="pressed" from="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2/tempoContainer/TimeForwardButton" to="." method="_on_time_forward_button_pressed"]

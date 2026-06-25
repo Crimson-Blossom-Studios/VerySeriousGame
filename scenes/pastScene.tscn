@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c3a3wa70mthf4"]
+
+[ext_resource type="Texture2D" uid="uid://6xp71ru0lm5u" path="res://assets/past/Desk_Scene.png" id="1_ugat6"]
+
+[node name="PastScene" type="Node2D" unique_id=322256064]
+
+[node name="Mesa" type="Sprite2D" parent="." unique_id=217718441]
+position = Vector2(210, 180)
+texture = ExtResource("1_ugat6")

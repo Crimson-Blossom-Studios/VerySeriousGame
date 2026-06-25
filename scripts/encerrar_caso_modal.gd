@@ -3,10 +3,10 @@ class_name EncerrarModal extends Control
 signal confirmed(is_confirmed:bool)
 
 
-@onready var tituloLabel: Label = %titulo
-@onready var descricaoLabel: Label = %descricao
-@onready var confirmarButton: Button = %confirmarButton
-@onready var cancelarButton: Button = %cancelarButton
+@onready var tituloLabel: Label = $Modal/MarginContainer/VBoxContainer/title
+@onready var descricaoLabel: Label = $Modal/MarginContainer/VBoxContainer/description
+@onready var confirmarButton: Button = $Modal/MarginContainer/VBoxContainer/HBoxContainer/confirmButton
+@onready var cancelarButton: Button = $Modal/MarginContainer/VBoxContainer/HBoxContainer/cancelButton
 
 var isOpen: bool = false
 

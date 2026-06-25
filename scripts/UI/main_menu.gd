@@ -13,7 +13,9 @@ func _ready() -> void:
 	pass
 
 func _on_start_button_pressed() -> void:
-	pass # Replace with function body.
+	await TransitionScreen.fade_to_black()
+	get_tree().change_scene_to_file("res://scenes/Game.tscn")
+	TransitionScreen.fade_to_normal()
 
 
 func _on_options_button_pressed() -> void:
@@ -26,6 +28,7 @@ func _on_credits_button_pressed() -> void:
 
 
 func _on_quit_button_pressed() -> void:
+	await TransitionScreen.fade_to_black()
 	get_tree().quit()
 
 func _on_back_button_pressed() -> void:

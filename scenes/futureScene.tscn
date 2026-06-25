@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://db88jtyobjcix"]
+
+[ext_resource type="Texture2D" uid="uid://du3spvnyakw22" path="res://assets/future/Desk_Scene_Future.png" id="1_kewcj"]
+
+[node name="FutureScene" type="Node2D" unique_id=322256064]
+
+[node name="Mesa" type="Sprite2D" parent="." unique_id=217718441]
+position = Vector2(210, 180)
+texture = ExtResource("1_kewcj")

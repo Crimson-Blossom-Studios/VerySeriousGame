@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://bu4mpjww7uacr" path="res://placeholders/icon.svg" id="1_lol7m"]
 [ext_resource type="Script" uid="uid://ohe1ji8ig1va" path="res://scripts/work_button.gd" id="3_8uu3j"]
 [ext_resource type="Texture2D" uid="uid://l207odjgswfk" path="res://assets/Desk_ScenePast.png" id="3_edsw2"]
-[ext_resource type="Texture2D" uid="uid://cs2m3xfagxaho" path="res://placeholders/seta_placeholder.png" id="3_ek3qx"]
 [ext_resource type="Script" uid="uid://brsxm07fmq0n5" path="res://scripts/voltar_button.gd" id="4_8l3jt"]
 [ext_resource type="Script" uid="uid://dmwqachhioaxc" path="res://scripts/work_bar.gd" id="4_ek3qx"]
 [ext_resource type="Script" uid="uid://c2b2umx23kqag" path="res://scripts/avancar_button.gd" id="4_xlljo"]
 [ext_resource type="Script" uid="uid://btyf3k0qmag8u" path="res://scripts/encerrar_button.gd" id="8_mkrnt"]
-[ext_resource type="PackedScene" uid="uid://c2tey2si1fd4b" path="res://scenes/encerrarCasoModal.tscn" id="10_mkrnt"]
+[ext_resource type="PackedScene" uid="uid://c2tey2si1fd4b" path="res://scenes/SolveCaseModal.tscn" id="10_mkrnt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8l3jt"]
+load_path = "res://.godot/imported/seta_placeholder.png-542d7ce065f8ba3275c6f212785a7697.ctex"
 
 [node name="Ui" type="Node2D" unique_id=969965149]
 script = ExtResource("1_8uu3j")
@@ -43,7 +45,7 @@ alignment = 1
 [node name="voltarButton" type="Button" parent="CanvaLayer/PanelContainer/tempoContainer" unique_id=1658366530]
 layout_mode = 2
 size_flags_horizontal = 3
-icon = ExtResource("3_ek3qx")
+icon = SubResource("CompressedTexture2D_8l3jt")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -52,7 +54,7 @@ script = ExtResource("4_8l3jt")
 [node name="avancarButton" type="Button" parent="CanvaLayer/PanelContainer/tempoContainer" unique_id=1204688670]
 layout_mode = 2
 size_flags_horizontal = 3
-icon = ExtResource("3_ek3qx")
+icon = SubResource("CompressedTexture2D_8l3jt")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -112,6 +114,7 @@ script = ExtResource("4_ek3qx")
 
 [node name="EncerrarCasoModal" parent="CanvaLayer" unique_id=248465526 instance=ExtResource("10_mkrnt")]
 unique_name_in_owner = true
+visible = false
 
 [connection signal="pressed" from="CanvaLayer/PanelContainer/tempoContainer/voltarButton" to="CanvaLayer/PanelContainer/tempoContainer/voltarButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvaLayer/PanelContainer/tempoContainer/avancarButton" to="CanvaLayer/PanelContainer/tempoContainer/avancarButton" method="_on_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs2m3xfagxaho"
-path="res://.godot/imported/seta_placeholder.png-542d7ce065f8ba3275c6f212785a7697.ctex"
+uid="uid://dbuqni830p3df"
+path="res://.godot/imported/DrawerOpening.png-328cc70168c3660684881386e5338412.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholders/seta_placeholder.png"
-dest_files=["res://.godot/imported/seta_placeholder.png-542d7ce065f8ba3275c6f212785a7697.ctex"]
+source_file="res://assets/past/DrawerOpening.png"
+dest_files=["res://.godot/imported/DrawerOpening.png-328cc70168c3660684881386e5338412.ctex"]
 
 [params]
 
