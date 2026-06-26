@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bb1hh734x4hvp" path="res://scenes/presentScene.tscn" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://bbdirq0atydug" path="res://scripts/game.gd" id="1_qbsmt"]
-[ext_resource type="Script" uid="uid://cet0kyywmtlyu" path="res://scripts/present_scene.gd" id="2_2rd6h"]
 [ext_resource type="Texture2D" uid="uid://dxjn5db8lmp1g" path="res://assets/UI/Arrow_Unpressed.png" id="2_kiw3p"]
 [ext_resource type="Texture2D" uid="uid://kdokpcj85122" path="res://assets/characters/cassandra_presente_alta_resolucao.png" id="3_3xj3m"]
 [ext_resource type="PackedScene" uid="uid://c3a3wa70mthf4" path="res://scenes/pastScene.tscn" id="3_78awf"]
@@ -254,7 +253,6 @@ visible = false
 visible = false
 
 [node name="PresentScene" parent="RightPanel/ViewportContainer/RightPanelViewport" unique_id=322256064 instance=ExtResource("1_ibkli")]
-script = ExtResource("2_2rd6h")
 
 [node name="DocumentoViewer" parent="RightPanel" unique_id=1637418530 instance=ExtResource("7_mcffj")]
 

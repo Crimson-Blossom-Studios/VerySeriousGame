@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bb1hh734x4hvp"]
 
 [ext_resource type="Texture2D" uid="uid://t6srs1illx51" path="res://assets/present/Desk_Scene_Present.png" id="1_mrthh"]
+[ext_resource type="Script" uid="uid://cet0kyywmtlyu" path="res://scripts/present_scene.gd" id="1_rhios"]
 [ext_resource type="Texture2D" uid="uid://b2i2b2u31gb2p" path="res://assets/present/Monitor.png" id="2_803cr"]
 [ext_resource type="Texture2D" uid="uid://cictlpy7guxl5" path="res://assets/present/Keyboard.png" id="2_gvac6"]
 [ext_resource type="Texture2D" uid="uid://c7y5ky3305cxt" path="res://assets/present/Mouse.png" id="4_82uup"]
@@ -30,6 +31,7 @@ size = Vector2(15, 19)
 b = Vector2(8, 15)
 
 [node name="PresentScene" type="Node2D" unique_id=322256064]
+script = ExtResource("1_rhios")
 
 [node name="Mesa" type="Sprite2D" parent="." unique_id=217718441]
 position = Vector2(210, 180)
