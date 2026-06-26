@@ -22,6 +22,8 @@ TimelineManager="*uid://b67pqjx7y5pu1"
 TransitionScreen="*uid://yet73cv0aok0"
 TransitionTimeScreen="*uid://dn2kirevcqjdw"
 WorkSystem="*uid://6roykqqvg8r4"
+DrawerManager="*uid://bx6m1f4wamoxj"
+EventManager="*uid://jy53smwhwyyd"
 
 [display]
 

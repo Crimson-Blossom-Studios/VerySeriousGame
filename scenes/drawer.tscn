@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dk5awfn7tt5fn"]
+
+[ext_resource type="Script" uid="uid://xgx0y0came3c" path="res://scripts/drawer.gd" id="1_lvudm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xd07"]
+
+[node name="Drawer" type="Area2D" unique_id=1246181462]
+script = ExtResource("1_lvudm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1056144322]
+shape = SubResource("RectangleShape2D_3xd07")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

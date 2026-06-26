@@ -41,6 +41,13 @@ func _input(event):
 				if dragging:
 					dragging = false
 					dragging_instance = null
+					var Drawers = get_tree().get_nodes_in_group("drawer")
+					for d in Drawers:
+						if d.overlaps_area(self):
+							DrawerManager.guardar(data)
+							get_parent().documento_stack.erase(self)
+							queue_free()
+							return
 
 func _process(_delta):
 	if dragging:

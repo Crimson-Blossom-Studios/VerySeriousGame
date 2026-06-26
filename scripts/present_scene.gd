@@ -2,12 +2,24 @@ extends Node2D
 
 var documento_stack = []
 var documento_scene = preload("res://scenes/documento.tscn")
-var doc_teste = preload("res://resources/doc_teste.tres")
 
+var documentos_iniciais: Array[String] = ["doc_teste"]
+
+@onready var drawer = $Drawer
 @onready var viewer = get_tree().root.find_child("DocumentoViewer", true, false)
 
 func _ready() -> void:
-	spawn_document(doc_teste)
+	EventManager.registrar_cena(TimelineManager.Timeline.PRESENT, self)
+	drawer.gaveta_aberta.connect(_on_gaveta_aberta)
+	print("drawer conectado") 
+	for nome in documentos_iniciais:
+		var data = DrawerManager.get_por_nome(nome)
+		print(data)
+		if data:
+			spawn_document(data)
+
+func revelar_documento(data: DocumentData) -> void:
+	spawn_document(data)
 
 func spawn_document(data: DocumentData) -> void:
 	var documento = documento_scene.instantiate()
@@ -38,6 +50,10 @@ func push_documento_to_top(documento) -> void:
 	documento_stack.erase(documento)
 	add_documento(documento)
 	
+func _on_gaveta_aberta() -> void:
+	for data in DrawerManager.abrir():
+		spawn_document(data)
+		
 func _on_document_opened(documento: Documento) -> void:
 	viewer.open(documento)
 	

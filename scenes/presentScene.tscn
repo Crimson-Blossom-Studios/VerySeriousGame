@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bb1hh734x4hvp"]
 
 [ext_resource type="Texture2D" uid="uid://t6srs1illx51" path="res://assets/present/Desk_Scene_Present.png" id="1_mrthh"]
+[ext_resource type="Script" uid="uid://cet0kyywmtlyu" path="res://scripts/present_scene.gd" id="1_rhios"]
 [ext_resource type="Texture2D" uid="uid://b2i2b2u31gb2p" path="res://assets/present/Monitor.png" id="2_803cr"]
 [ext_resource type="Texture2D" uid="uid://cictlpy7guxl5" path="res://assets/present/Keyboard.png" id="2_gvac6"]
 [ext_resource type="Texture2D" uid="uid://c7y5ky3305cxt" path="res://assets/present/Mouse.png" id="4_82uup"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://p0j56mke7k0w" path="res://assets/present/Printer.png" id="5_82uup"]
 [ext_resource type="Texture2D" uid="uid://dyswkjl356ylv" path="res://assets/present/PenHolder.png" id="7_pvwh3"]
 [ext_resource type="Texture2D" uid="uid://drst5ttkvg3f7" path="res://assets/present/Pen.png" id="8_rhios"]
+[ext_resource type="PackedScene" uid="uid://dk5awfn7tt5fn" path="res://scenes/drawer.tscn" id="11_xwb3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ax5gu"]
 size = Vector2(88, 15)
@@ -30,6 +32,7 @@ size = Vector2(15, 19)
 b = Vector2(8, 15)
 
 [node name="PresentScene" type="Node2D" unique_id=322256064]
+script = ExtResource("1_rhios")
 
 [node name="Mesa" type="Sprite2D" parent="." unique_id=217718441]
 position = Vector2(210, 180)
@@ -99,5 +102,9 @@ texture = ExtResource("8_rhios")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pen/Area2D" unique_id=1638119520]
 position = Vector2(-4, -8)
 shape = SubResource("SegmentShape2D_tpybk")
+
+[node name="Drawer" parent="." unique_id=1246181462 groups=["drawer"] instance=ExtResource("11_xwb3d")]
+position = Vector2(158, 278)
+scale = Vector2(4.6000004, 1.52)
 
 [connection signal="input_event" from="Computador/Area2D" to="Computador/Area2D" method="_on_input_event"]
