@@ -47,10 +47,6 @@ folder_colors={
 "res://scripts/": "orange"
 }
 
-[global_group]
-
-Drawer=""
-
 [input]
 
 mouse_click={

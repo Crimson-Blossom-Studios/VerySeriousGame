@@ -8,5 +8,5 @@ script = ExtResource("1_m2px3")
 id = 1
 texture = ExtResource("2_iq51s")
 collision_radius = 20.0
-document_name = "teste"
+document_name = "doc_teste"
 metadata/_custom_type_script = "uid://bpnyk7k4wkf7j"

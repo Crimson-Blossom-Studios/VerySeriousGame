@@ -103,7 +103,9 @@ texture = ExtResource("8_rhios")
 position = Vector2(-4, -8)
 shape = SubResource("SegmentShape2D_tpybk")
 
-[node name="Drawer" parent="." unique_id=1246181462 groups=["Drawer"] instance=ExtResource("11_xwb3d")]
+[node name="Drawer" parent="." unique_id=1246181462 groups=["drawer"] instance=ExtResource("11_xwb3d")]
 unique_name_in_owner = true
+position = Vector2(158, 278)
+scale = Vector2(4.6000004, 1.52)
 
 [connection signal="input_event" from="Computador/Area2D" to="Computador/Area2D" method="_on_input_event"]
