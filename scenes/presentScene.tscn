@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://p0j56mke7k0w" path="res://assets/present/Printer.png" id="5_82uup"]
 [ext_resource type="Texture2D" uid="uid://dyswkjl356ylv" path="res://assets/present/PenHolder.png" id="7_pvwh3"]
 [ext_resource type="Texture2D" uid="uid://drst5ttkvg3f7" path="res://assets/present/Pen.png" id="8_rhios"]
+[ext_resource type="PackedScene" uid="uid://dk5awfn7tt5fn" path="res://scenes/drawer.tscn" id="11_xwb3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ax5gu"]
 size = Vector2(88, 15)
@@ -101,5 +102,8 @@ texture = ExtResource("8_rhios")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pen/Area2D" unique_id=1638119520]
 position = Vector2(-4, -8)
 shape = SubResource("SegmentShape2D_tpybk")
+
+[node name="Drawer" parent="." unique_id=1246181462 instance=ExtResource("11_xwb3d")]
+unique_name_in_owner = true
 
 [connection signal="input_event" from="Computador/Area2D" to="Computador/Area2D" method="_on_input_event"]

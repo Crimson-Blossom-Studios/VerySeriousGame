@@ -2,9 +2,10 @@ extends Node2D
 
 var documento_stack = []
 var documento_scene = preload("res://scenes/documento.tscn")
-var doc_teste = preload("res://resources/documentos/doc_teste.tres")
 
-@onready var gaveta = $Gaveta
+var documentos_iniciais: Array[String] = ["doc_teste"]
+
+@onready var drawer = $Drawer
 @onready var viewer = get_tree().root.find_child("DocumentoViewer", true, false)
 
 func _ready() -> void:
@@ -12,9 +13,12 @@ func _ready() -> void:
 	drawer.gaveta_aberta.connect(_on_gaveta_aberta)
  
 	for id in documentos_iniciais:
-		var data = GavetaManager.get_por_id(id)
+		var data = DrawerManager.get_por_id(id)
 		if data:
 			spawn_document(data)
+
+func revelar_documento(data: DocumentData) -> void:
+	spawn_document(data)
 
 func spawn_document(data: DocumentData) -> void:
 	var documento = documento_scene.instantiate()
@@ -45,6 +49,10 @@ func push_documento_to_top(documento) -> void:
 	documento_stack.erase(documento)
 	add_documento(documento)
 	
+func _on_gaveta_aberta() -> void:
+	for data in DrawerManager.abrir():
+		spawn_document(data)
+		
 func _on_document_opened(documento: Documento) -> void:
 	viewer.open(documento)
 	

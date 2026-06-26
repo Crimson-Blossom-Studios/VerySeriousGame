@@ -41,6 +41,12 @@ func _input(event):
 				if dragging:
 					dragging = false
 					dragging_instance = null
+					var gavetas = %Drawer
+					for g in gavetas:
+						if g.overlaps_area(self):
+							DrawerManager.guardar(data)
+							queue_free()
+						return
 
 func _process(_delta):
 	if dragging:
