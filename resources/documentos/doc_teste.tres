@@ -6,7 +6,18 @@
 [resource]
 script = ExtResource("1_m2px3")
 id = 1
-texture = ExtResource("2_iq51s")
-collision_radius = 20.0
 document_name = "doc_teste"
+texture = ExtResource("2_iq51s")
+conteudo = "[center][b]MEMORANDO INTERNO[/b][/center]
+
+Data: 14/09/2031
+
+Para: Departamento de Segurança
+De: Dr. Harlow
+
+O acesso ao [b]Setor C[/b] está [color=red]terminantemente proibido[/color] até segunda ordem.
+
+Qualquer violação será tratada como [i]falta grave[/i].
+
+[right]— Dr. Harlow[/right]"
 metadata/_custom_type_script = "uid://bpnyk7k4wkf7j"

@@ -104,7 +104,6 @@ position = Vector2(-4, -8)
 shape = SubResource("SegmentShape2D_tpybk")
 
 [node name="Drawer" parent="." unique_id=1246181462 groups=["drawer"] instance=ExtResource("11_xwb3d")]
-unique_name_in_owner = true
 position = Vector2(158, 278)
 scale = Vector2(4.6000004, 1.52)
 
