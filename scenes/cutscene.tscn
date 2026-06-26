@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dmt6f2pvv57ty"]
+
+[ext_resource type="Script" uid="uid://dbsdoltg3e466" path="res://scripts/cutscene.gd" id="1_edmg7"]
+[ext_resource type="VideoStream" uid="uid://c2c0gohg8q0ov" path="res://assets/Gravando-2026-06-23-222222.ogv" id="2_0sipp"]
+[ext_resource type="PackedScene" uid="uid://c2bw55020b4vm" path="res://scenes/DialogueBoxCutscene.tscn" id="3_0sipp"]
+
+[node name="CutscenePlayer" type="Node" unique_id=1926353391 node_paths=PackedStringArray("video", "dialogue_box")]
+script = ExtResource("1_edmg7")
+video = NodePath("VideoStreamPlayer")
+dialogue_box = NodePath("DialogueBoxCutscene")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1784935594]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_0sipp")
+expand = true
+
+[node name="DialogueBoxCutscene" parent="." unique_id=1329500111 instance=ExtResource("3_0sipp")]
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

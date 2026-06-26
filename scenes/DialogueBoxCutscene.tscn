@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c2bw55020b4vm"]
+
+[ext_resource type="Script" uid="uid://dekun7n4alete" path="res://scripts/dialogue_box.gd" id="1_ojbu0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2og1"]
+
+[node name="DialogueBoxCutscene" type="CanvasLayer" unique_id=1329500111 node_paths=PackedStringArray("speaker_label", "main_text_label", "continue_label")]
+script = ExtResource("1_ojbu0")
+speaker_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/SpeakerLabel")
+main_text_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/MainTextLabel")
+continue_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/ContinueLabel")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=776111193]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r2og1")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1841267548]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=915209631]
+layout_mode = 2
+
+[node name="SpeakerLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1051502523]
+layout_mode = 2
+text = "teste"
+
+[node name="MainTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=570462638]
+layout_mode = 2
+size_flags_vertical = 3
+text = "PLACEHOLDER"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="ContinueLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1492437763]
+layout_mode = 2
+text = "teste"
+horizontal_alignment = 2
