@@ -11,9 +11,10 @@ var documentos_iniciais: Array[String] = ["doc_teste"]
 func _ready() -> void:
 	EventManager.registrar_cena(TimelineManager.Timeline.PRESENT, self)
 	drawer.gaveta_aberta.connect(_on_gaveta_aberta)
- 
-	for id in documentos_iniciais:
-		var data = DrawerManager.get_por_id(id)
+	print("drawer conectado") 
+	for nome in documentos_iniciais:
+		var data = DrawerManager.get_por_nome(nome)
+		print(data)
 		if data:
 			spawn_document(data)
 

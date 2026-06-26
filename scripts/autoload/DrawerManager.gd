@@ -15,12 +15,12 @@ func _carregar_documentos() -> void:
 			if arquivo.ends_with(".tres"):
 				var data = load("res://resources/documentos/" + arquivo)
 				if data is DocumentData:
-					todos_documentos[data.id] = data
+					todos_documentos[data.document_name] = data  # ← indexa por nome
 			arquivo = dir.get_next()
 		dir.list_dir_end()
 
-func get_por_id(id: String) -> DocumentData:
-	return todos_documentos.get(id, null)
+func get_por_nome(nome: String) -> DocumentData:
+	return todos_documentos.get(nome, null)
 
 func guardar(data: DocumentData) -> void:
 	stack.append(data)
