@@ -56,7 +56,7 @@ func _process(_delta):
 			target.x = clamp(target.x, bounds.position.x, bounds.end.x)
 			target.y = clamp(target.y, bounds.position.y, bounds.end.y)
 		global_position = target
-	$Sprite.flip_v = global_position.x > 210
+	$Sprite.flip_h = global_position.x > 210
 
 func _on_mouse_entered():
 	mouse_in = true

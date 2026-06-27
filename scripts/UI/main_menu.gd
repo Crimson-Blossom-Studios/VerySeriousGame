@@ -2,7 +2,7 @@ extends Control
 
 @onready var options_menu = $OptionsMenu
 @onready var mainMarginContainer = $MainMarginContainer
-@onready var resolution_button = $OptionsMenu/OptionsVBoxContainer/ResolutionHBox/ResolutionButton
+@onready var resolution_button = $OptionsMenu/MarginContainer/OptionsVBoxContainer/ResolutionHBox/ResolutionButton
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause_or_cancel"):
