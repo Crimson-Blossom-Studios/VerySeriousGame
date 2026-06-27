@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://c5jl5ffph4nry" path="res://scenes/documentoViewer.tscn" id="7_mcffj"]
 [ext_resource type="PackedScene" uid="uid://c2tey2si1fd4b" path="res://scenes/SolveCaseModal.tscn" id="8_3xj3m"]
 [ext_resource type="Script" uid="uid://dmwqachhioaxc" path="res://scripts/work_bar.gd" id="9_g4kob"]
+[ext_resource type="PackedScene" uid="uid://3jg208kdpkhu" path="res://scenes/ModalFutureComputer.tscn" id="12_r7sob"]
+[ext_resource type="PackedScene" uid="uid://c2bw55020b4vm" path="res://scenes/DialogueBoxCutscene.tscn" id="13_7ua8r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntijw"]
 bg_color = Color(0.105882354, 0.1254902, 0.14901961, 1)
@@ -133,7 +135,7 @@ stretch_mode = 6
 
 [node name="Label" type="Label" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer" unique_id=1886189660]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 11
 text = "Cassandra Reyes - Detective"
 horizontal_alignment = 1
 
@@ -149,14 +151,14 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 11
 text = "Solve the Case"
 
 [node name="Button2" type="Button" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1414243441]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 11
 text = "Notes"
 
 [node name="PanelContainer2" type="PanelContainer" parent="LeftPanel/VBoxContainer/PanelContainer2/teste2" unique_id=410916778]
@@ -217,7 +219,7 @@ render_target_update_mode = 4
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -152.0
+offset_left = -114.0
 offset_bottom = 27.0
 grow_horizontal = 0
 script = ExtResource("9_g4kob")
@@ -242,10 +244,14 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 13
 text = "Double-click any document to inspect"
 
 [node name="SolveCaseModal" parent="RightPanel/ViewportContainer/RightPanelViewport/UI" unique_id=248465526 instance=ExtResource("8_3xj3m")]
+visible = false
+
+[node name="DialogueBox" parent="RightPanel/ViewportContainer/RightPanelViewport/UI" unique_id=677874805 instance=ExtResource("13_7ua8r")]
+visible = false
 
 [node name="PastScene" parent="RightPanel/ViewportContainer/RightPanelViewport" unique_id=2045168837 instance=ExtResource("3_78awf")]
 visible = false
@@ -257,6 +263,10 @@ visible = false
 script = ExtResource("2_2rd6h")
 
 [node name="DocumentoViewer" parent="RightPanel" unique_id=1637418530 instance=ExtResource("7_mcffj")]
+visible = false
+
+[node name="ModalFutureComputer" parent="RightPanel" unique_id=627974411 instance=ExtResource("12_r7sob")]
+visible = false
 
 [connection signal="pressed" from="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SolveCaseButton" to="." method="_on_solve_case_button_pressed"]
 [connection signal="pressed" from="LeftPanel/VBoxContainer/PanelContainer2/teste2/PanelContainer2/tempoContainer/TimeBackButton" to="." method="_on_time_back_button_pressed"]

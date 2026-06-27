@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://3jg208kdpkhu"]
+
+[ext_resource type="Texture2D" uid="uid://bidcsqqq13n3f" path="res://assets/future/Monitor.png" id="1_feb17"]
+[ext_resource type="Script" uid="uid://cuhnodejskkhl" path="res://scripts/modal_future_computer.gd" id="1_w0uyh"]
+[ext_resource type="Texture2D" uid="uid://dxjn5db8lmp1g" path="res://assets/UI/Arrow_Unpressed.png" id="2_sl45w"]
+[ext_resource type="Texture2D" uid="uid://cwsik44spd3sq" path="res://assets/UI/Arrow_Pressed.png" id="3_a33w5"]
+[ext_resource type="Texture2D" uid="uid://brecl04o6otkc" path="res://assets/UI/Arrow_Hover.png" id="4_ojqjf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hea24"]
+bg_color = Color(0.5, 0.5, 0.5, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="ModalFutureComputer" type="CanvasLayer" unique_id=627974411]
+script = ExtResource("1_w0uyh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1270760771]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_feb17")
+expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1115632472]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.70000005)
+
+[node name="PasswordPanel" type="VBoxContainer" parent="." unique_id=687577240]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -37.0
+offset_right = 246.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="LabelTitle" type="Label" parent="PasswordPanel" unique_id=47068705]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Weston Tech - Portal"
+horizontal_alignment = 1
+
+[node name="LabelInstruction" type="Label" parent="PasswordPanel" unique_id=1886354122]
+layout_mode = 2
+text = "Hello Harry Weston. Welcome back to Weston Tech!
+Please, enter your password."
+horizontal_alignment = 1
+
+[node name="HBoxDigits" type="HBoxContainer" parent="PasswordPanel" unique_id=730471124]
+layout_mode = 2
+
+[node name="Digit1" type="Label" parent="PasswordPanel/HBoxDigits" unique_id=834248047]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_hea24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit2" type="Label" parent="PasswordPanel/HBoxDigits" unique_id=1945159450]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_hea24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit3" type="Label" parent="PasswordPanel/HBoxDigits" unique_id=2100735387]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_hea24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit4" type="Label" parent="PasswordPanel/HBoxDigits" unique_id=1402943950]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_hea24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit5" type="Label" parent="PasswordPanel/HBoxDigits" unique_id=1757985685]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_hea24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit6" type="Label" parent="PasswordPanel/HBoxDigits" unique_id=1163887530]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_hea24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelError" type="Label" parent="PasswordPanel" unique_id=806782738]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.75, 0, 0, 1)
+text = "Wrong password"
+
+[node name="ButtonsPanel" type="VBoxContainer" parent="." unique_id=1055149741]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -17.5
+offset_right = 112.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SearchEmployeeButton" type="Button" parent="ButtonsPanel" unique_id=2074384039]
+layout_mode = 2
+text = "Research Employee"
+
+[node name="RestrictedFilesButton" type="Button" parent="ButtonsPanel" unique_id=1154521857]
+layout_mode = 2
+text = "Confidential Files"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1241811121]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 8
+
+[node name="BackButton" type="TextureButton" parent="MarginContainer" unique_id=270798927]
+layout_mode = 2
+texture_normal = ExtResource("2_sl45w")
+texture_pressed = ExtResource("3_a33w5")
+texture_hover = ExtResource("4_ojqjf")
+
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

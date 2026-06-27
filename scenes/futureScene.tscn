@@ -1,9 +1,89 @@
 [gd_scene format=3 uid="uid://db88jtyobjcix"]
 
 [ext_resource type="Texture2D" uid="uid://du3spvnyakw22" path="res://assets/future/Desk_Scene_Future.png" id="1_kewcj"]
+[ext_resource type="Texture2D" uid="uid://bidcsqqq13n3f" path="res://assets/future/Monitor.png" id="2_f4don"]
+[ext_resource type="Script" uid="uid://eqamw81xkq14" path="res://scripts/future_computer.gd" id="3_hj8bt"]
+[ext_resource type="Texture2D" uid="uid://chgnp3px71l0f" path="res://assets/future/Keyboard.png" id="3_nv56t"]
+[ext_resource type="Texture2D" uid="uid://dvsrjktbcpqkr" path="res://assets/future/Mousepad.png" id="4_jolm4"]
+[ext_resource type="Texture2D" uid="uid://bbf8iymsw83xk" path="res://assets/future/Mouse.png" id="5_mer5l"]
+[ext_resource type="Texture2D" uid="uid://c71jihd4el7lp" path="res://assets/future/Document_Restorer.png" id="6_mer5l"]
+[ext_resource type="Texture2D" uid="uid://d1pmxui7m535n" path="res://assets/future/PlantVase.png" id="7_hj8bt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3s17"]
+size = Vector2(129, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax5gu"]
+size = Vector2(88, 14)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3s17"]
+radius = 5.5
+height = 15.649902
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tpybk"]
+radius = 15.55574
+height = 45.253113
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ax5gu"]
+radius = 8.0
 
 [node name="FutureScene" type="Node2D" unique_id=322256064]
 
 [node name="Mesa" type="Sprite2D" parent="." unique_id=217718441]
 position = Vector2(210, 180)
 texture = ExtResource("1_kewcj")
+
+[node name="Computador" type="Sprite2D" parent="." unique_id=771347177]
+position = Vector2(210, 168)
+texture = ExtResource("2_f4don")
+
+[node name="Area2D" type="Area2D" parent="Computador" unique_id=70018685]
+script = ExtResource("3_hj8bt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computador/Area2D" unique_id=483141470]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_x3s17")
+
+[node name="Keyboard" type="Sprite2D" parent="." unique_id=1623597687]
+position = Vector2(189, 216)
+texture = ExtResource("3_nv56t")
+
+[node name="Area2D" type="Area2D" parent="Keyboard" unique_id=580734004]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keyboard/Area2D" unique_id=706817338]
+shape = SubResource("RectangleShape2D_ax5gu")
+
+[node name="Mousepad" type="Sprite2D" parent="." unique_id=737475891]
+position = Vector2(265, 214.5)
+texture = ExtResource("4_jolm4")
+
+[node name="Mouse" type="Sprite2D" parent="." unique_id=1522067918]
+position = Vector2(265, 213.5)
+texture = ExtResource("5_mer5l")
+
+[node name="Area2D" type="Area2D" parent="Mouse" unique_id=1925097706]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse/Area2D" unique_id=872407445]
+rotation = -1.0890855
+shape = SubResource("CapsuleShape2D_x3s17")
+
+[node name="DocumentRestorer" type="Sprite2D" parent="." unique_id=2097219342]
+position = Vector2(352, 202)
+texture = ExtResource("6_mer5l")
+
+[node name="Area2D" type="Area2D" parent="DocumentRestorer" unique_id=1697888326]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DocumentRestorer/Area2D" unique_id=1026991628]
+rotation = -0.7766715
+shape = SubResource("CapsuleShape2D_tpybk")
+
+[node name="PlantVase" type="Sprite2D" parent="." unique_id=2065671189]
+position = Vector2(55, 176)
+texture = ExtResource("7_hj8bt")
+
+[node name="Area2D" type="Area2D" parent="PlantVase" unique_id=168610992]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlantVase/Area2D" unique_id=1191374030]
+position = Vector2(-0.5, 3.69)
+shape = SubResource("CapsuleShape2D_ax5gu")
+
+[connection signal="input_event" from="Computador/Area2D" to="Computador/Area2D" method="_on_input_event"]

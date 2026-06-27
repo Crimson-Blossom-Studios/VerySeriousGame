@@ -5,7 +5,7 @@ signal dialogue_finished
 
 @export var speaker_label: Label
 @export var main_text_label: RichTextLabel
-@export var continue_label: Label
+@export var continue_icon: TextureRect
 
 const type_per_sec: float = 40
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 	timer.timeout.connect(on_tick)
 	add_child(timer)
 	hide()
-	continue_label.modulate.a = 0.0
+	continue_icon.modulate.a = 0.0
 
 func show_dialogue(lines_array: Array):
 	lines = lines_array
@@ -39,7 +39,7 @@ func display_line(id):
 		speaker_label.show()
 	full_text = line["text"]
 	main_text_label.text = ""
-	continue_label.modulate.a = 0.0
+	continue_icon.modulate.a = 0.0
 	is_typing = true
 	timer.start()
 
@@ -50,7 +50,7 @@ func on_tick():
 	else:
 		timer.stop()
 		is_typing = false
-		continue_label.modulate.a = 1.0
+		continue_icon.modulate.a = 1.0
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -68,7 +68,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		timer.stop()
 		is_typing = false
 		main_text_label.text = full_text
-		continue_label.modulate.a = 1.0
+		continue_icon.modulate.a = 1.0
 	else:
 		current_line += 1
 		if current_line < lines.size():
